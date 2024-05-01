@@ -41,7 +41,7 @@ for row in rows:
 
 # JSON 파일로 저장
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"melonconcert/pychart_M_concert10.py__{current_date}.json"
+filename = f"melonconcert/pychart_M_concert10.py_{current_date}.json"
 with open(filename, 'w', encoding='utf-8') as file:
     json.dump(data, file, ensure_ascii=False, indent=4)
 
