@@ -42,29 +42,13 @@ jobs:
       
     - name: run file
       run: |
-        python3 pyBillboardChart.py
-        python3 pyBugsChart.py
-        python3 pyMelonChart.py
-        python3 pyAppleChart.py
+        python3 pychart_M_concert10.py
 
     - name: commits
       run : |
         git config --global user.email "hyeji1364@gmail.com"
         git config --global user.name "Hyeji1364" 
-        git add concert/melon/chart_M_concert10_*.json
-        git add concert/interpark/chart_I_concert10_*.json
-        git add concert/ticketlink/chart_T_concert10_*.json
-        git add concert/yes24/chart_Y_concert10_*.json
-
-        git add exhibition/melon/chart_M_concert10_*.json
-        git add exhibition/interpark/chart_I_concert10_*.json
-        git add exhibition/ticketlink/chart_T_concert10_*.json
-        git add exhibition/yes24/chart_Y_concert10_*.json
-
-        git add musical/melon/chart_M_concert10_*.json
-        git add musical/interpark/chart_I_concert10_*.json
-        git add musical/ticketlink/chart_T_concert10_*.json
-        git add musical/yes24/chart_Y_concert10_*.json
+        git add melonconcert/chart_M_concert10_*.json
         git commit -m "차트 수집 완료"
 
     - name: push
