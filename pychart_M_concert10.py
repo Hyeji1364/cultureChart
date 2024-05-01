@@ -19,6 +19,11 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 url = "https://ticket.melon.com/ranking/index.htm"
 
+# 웹드라이브 설치
+options = ChromeOptions()
+options.add_argument("--headless")
+browser = webdriver.Chrome(options=options)
+
 # 웹 페이지에 접속
 driver.get(url)
 time.sleep(5)  # 페이지 로딩 대기
