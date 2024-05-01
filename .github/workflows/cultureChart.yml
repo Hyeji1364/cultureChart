@@ -13,47 +13,31 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.9", "3.10", "3.11"]
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-        
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        
-    - name: Install library
-      run: |
-        pip install requests
-        pip install beautifulsoup4
-        pip install lxml
-        pip install pandas
-        pip install selenium
-        pip install webdriver_manager
-      
-    - name: run file
-      run: |
-        python3 pychart_M_concert10.py
-
-    - name: commits
-      run : |
-        git config --global user.email "hyeji1364@gmail.com"
-        git config --global user.name "Hyeji1364" 
-        git add melonconcert/chart_M_concert10_*.json
-        git commit -m "차트 수집 완료"
-
-    - name: push
-      uses: ad-m/github-push-action@master
-      with:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml pandas selenium webdriver_manager
+      - name: Run script
+        run: python pychart_M_concert10.py
+        working-directory: ./path/to/your/script
+      - name: Commit results
+        run: |
+          git config --global user.email "hyeji1364@gmail.com"
+          git config --global user.name "Hyeji1364"
+          git add melonconcert/chart_M_concert10_*.json
+          git commit -m "차트 수집 완료"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: "main"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: "main"
         github_token: $
       
