@@ -15,8 +15,8 @@ import json
 options = ChromeOptions()
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
-service = ChromeService(executable_path=ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=options)
+options.add_argument("--headless")
+driver = webdriver.Chrome(options=options)
 url = "https://ticket.melon.com/ranking/index.htm"
 
 # 웹 페이지에 접속
