@@ -14,6 +14,7 @@ current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"chart_T_concert10_{current_date}.json"
 # 웹드라이버 설치
 options = ChromeOptions()
+options.add_argument("--headless")
 browser = webdriver.Chrome(options=options)
 browser.get("https://www.ticketlink.co.kr/ranking")
 # 페이지가 완전히 로드될 때까지 대기
