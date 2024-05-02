@@ -43,14 +43,14 @@ jobs:
     - name: run file
       run: |
         python pychart_M_concert10.py
-        python pychart_T_concert10.py
+        python pychart_M_exhibition10.py
 
     - name: commits
       run : |
         git config --global user.email "hyeji1364@gmail.com"
         git config --global user.name "Hyeji1364" 
         git add melonconcert/pychart_M_concert10.py*.json
-        git add ticketconcert/pychart_T_concert10.py*.json
+        git add melonexhibition/pychart_M_concert10.py*.json
         git commit -m "차트 수집 완료"
 
     - name: push
