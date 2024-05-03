@@ -44,17 +44,22 @@ jobs:
       run: |
         python pychart_M_concert10.py
         python pychart_M_exhibiton10.py
-        python pychart_T_concert10.py
+        python pychart_M_musical10.py
+
     - name: commits
       run : |
-        git config --global user.email "dlswl1993@gmail.com"
-        git config --global user.name "HwangInJi" 
+        git config --global user.email "hyeji1364@gmail.com"
+        git config --global user.name "Hyeji1364" 
         git add melonconcert/pychart_M_concert10*.json
         git add melonexhibiton/pychart_M_exhibiton10*.json
-        git add ticketconcert/pychart_T_concert10*.json
+        git add melonmusical/pychart_M_musical10*.json
         git commit -m "차트 수집 완료"
+
     - name: push
       uses: ad-m/github-push-action@master
       with:
         branch: "main"
         github_token: $
+        
+
+        
