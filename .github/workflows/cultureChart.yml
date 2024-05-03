@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11"]
+        python-version: ["3.9"]
 
     steps:
     - uses: actions/checkout@v4
@@ -43,19 +43,30 @@ jobs:
     - name: run file
       run: |
         python pychart_M_concert10.py
-        python pychart_M_musical10.py
         python pychart_M_exhibiton10.py
+        python pychart_M_musical10.py
+        python pychart_T_concert10.py
         python pychart_T_exhibiton10.py
+        python pychart_T_musical10.py
+        python pychart_Y_concert10.py
+        python pychart_Y_exhibiton10.py
+        python pychart_Y_musical10.py
+        python pychart_I_concert10.py
 
     - name: commits
       run : |
         git config --global user.email "hyeji1364@gmail.com"
         git config --global user.name "Hyeji1364" 
         git add melonconcert/pychart_M_concert10*.json
-        git add melonmusical/pychart_M_musical10*.json
         git add melonexhibiton/pychart_M_exhibiton10*.json
+        git add melonmusical/pychart_M_musical10*.json
         git add ticketconcert/pychart_T_concert10*.json
         git add ticketexhibiton/pychart_T_exhibiton10*.json
+        git add ticketmusical/pychart_T_musical10*.json
+        git add yes24concert/pychart_Y_concert10*.json
+        git add yes24exhibiton/pychart_Y_exhibiton10*.json
+        git add yes24musical/pychart_Y_musical10*.json
+        git add interparkconcert/pychart_I_concert10*.json
         git commit -m "차트 수집 완료"
 
     - name: push
@@ -63,6 +74,3 @@ jobs:
       with:
         branch: "main"
         github_token: $
-        
-
-        
