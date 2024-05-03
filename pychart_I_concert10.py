@@ -38,7 +38,7 @@ except Exception as e:
 try:
     WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='월간']"))).click()
     print("Clicked '월간' tab.")
-    time.sleep(3)
+    time.sleep(5)
 except Exception as e:
     print("Error clicking '월간' tab:", e)
 
