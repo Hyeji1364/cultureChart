@@ -1,15 +1,15 @@
 [
     {
         "Rank": "1",
-        "Title": "뮤지컬 〈벤자민 버튼〉",
-        "Venue": "세종문화회관 M씨어터",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/2024040316362798815caf-e155-4bc2-b32f-638ef52b4f28.jpg"
-    },
-    {
-        "Rank": "2",
         "Title": "뮤지컬 〈그레이트 코멧〉",
         "Venue": "유니버설아트센터",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/2024012613313215790e76-bf98-4c42-847c-ba77d5f72dac.jpg"
+    },
+    {
+        "Rank": "2",
+        "Title": "뮤지컬 〈벤자민 버튼〉",
+        "Venue": "세종문화회관 M씨어터",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/2024040316362798815caf-e155-4bc2-b32f-638ef52b4f28.jpg"
     },
     {
         "Rank": "3",
