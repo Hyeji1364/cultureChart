@@ -12,7 +12,7 @@ from datetime import datetime
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"chart_I_concert10_{current_date}.json"
+filename = f"interparkconcert/pychart_I_concert10{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -30,7 +30,7 @@ try:
     )
     concert_tab_button.click()
     print("Clicked '콘서트' tab.")
-    time.sleep(3)  # 페이지가 완전히 로드될 때까지 대기
+    time.sleep(5)  # 페이지가 완전히 로드될 때까지 대기
 except Exception as e:
     print("Error clicking '콘서트' tab:", e)
 
@@ -45,12 +45,12 @@ except Exception as e:
 page_source = browser.page_source
 soup = BeautifulSoup(page_source, 'html.parser')
 
-# Find the parent container for ranking items
+# 순위 항목에 대한 상위 컨테이너 찾기
 ranking_container = soup.find('div', class_='responsive-ranking-list_rankingListWrap__GM0yK')
 
 concerts = []
 
-# 1-3위 콘서트 순위 정보 추출
+# 1-3위 데이터 추출
 for ranking_item in ranking_container.find_all('div', class_='responsive-ranking-list_rankingItem__PuQPJ'):
     rank = ranking_item.find('div', class_='RankingBadge_badgeNumber__84aeb').text.strip()
     concert_name = ranking_item.find('li', class_='responsive-ranking-list_goodsName__aHHGY').text.strip()
