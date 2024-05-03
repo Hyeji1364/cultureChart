@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.11"]
 
     steps:
     - uses: actions/checkout@v4
@@ -45,7 +45,7 @@ jobs:
         python pychart_M_concert10.py
         python pychart_M_musical10.py
         python pychart_M_exhibiton10.py
-        python pychart_T_concert10.py
+        python pychart_T_exhibiton10.py
 
     - name: commits
       run : |
@@ -55,6 +55,7 @@ jobs:
         git add melonmusical/pychart_M_musical10*.json
         git add melonexhibiton/pychart_M_exhibiton10*.json
         git add ticketconcert/pychart_T_concert10*.json
+        git add ticketexhibiton/pychart_T_exhibiton10*.json
         git commit -m "차트 수집 완료"
 
     - name: push
