@@ -14,8 +14,9 @@ from datetime import datetime
 current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"chart_I_concert10_{current_date}.json"
 
-# 웹드라이버 설정
+# 웹드라이버 설치
 options = ChromeOptions()
+options.add_argument("--headless")
 browser = webdriver.Chrome(options=options)
 browser.get("https://tickets.interpark.com/contents/ranking")
 
@@ -37,7 +38,7 @@ except Exception as e:
 try:
     WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='월간']"))).click()
     print("Clicked '월간' tab.")
-    time.sleep(3)
+    time.sleep(5)
 except Exception as e:
     print("Error clicking '월간' tab:", e)
 
