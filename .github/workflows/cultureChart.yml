@@ -48,6 +48,7 @@ jobs:
         python pychart_T_exhibiton10.py
         python pychart_Y_concert10.py
         python pychart_Y_exhibiton10.py
+        python pychart_Y_musical10.py
 
     - name: commits
       run : |
@@ -59,6 +60,7 @@ jobs:
         git add ticketexhibiton/pychart_T_exhibiton10*.json
         git add yes24concert/pychart_Y_concert10*.json
         git add yes24exhibiton/pychart_Y_exhibiton10*.json
+        git add yes24musical/pychart_Y_musical10*.json
         git commit -m "차트 수집 완료"
 
     - name: push
