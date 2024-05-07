@@ -1,10 +1,10 @@
 import json
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui.WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait  # 수정된 부분
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
