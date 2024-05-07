@@ -12,12 +12,11 @@ from datetime import datetime
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"interparkconcert/pychart_I_concert10{current_date}.json"
+filename = f"chart_I_concert10_{current_date}.json"
 
-# 웹드라이버 설치
+# 웹드라이버 설정
 options = ChromeOptions()
 options.add_argument("--headless")
-browser = webdriver.Chrome(options=options)
 browser.get("https://tickets.interpark.com/contents/ranking")
 
 # RadioButton_wrap__761f0 클래스를 가진 div 요소를 찾기
@@ -30,7 +29,7 @@ try:
     )
     concert_tab_button.click()
     print("Clicked '콘서트' tab.")
-    time.sleep(5)  # 페이지가 완전히 로드될 때까지 대기
+    time.sleep(3)  # 페이지가 완전히 로드될 때까지 대기
 except Exception as e:
     print("Error clicking '콘서트' tab:", e)
 
@@ -38,7 +37,7 @@ except Exception as e:
 try:
     WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='월간']"))).click()
     print("Clicked '월간' tab.")
-    time.sleep(5)
+    time.sleep(3)
 except Exception as e:
     print("Error clicking '월간' tab:", e)
 
@@ -50,12 +49,12 @@ ranking_container = soup.find('div', class_='responsive-ranking-list_rankingList
 
 concerts = []
 
-# 1-3위 데이터 추출
+# 1-3위 콘서트 순위 정보 추출
 for ranking_item in ranking_container.find_all('div', class_='responsive-ranking-list_rankingItem__PuQPJ'):
     rank = ranking_item.find('div', class_='RankingBadge_badgeNumber__84aeb').text.strip()
     concert_name = ranking_item.find('li', class_='responsive-ranking-list_goodsName__aHHGY').text.strip()
     venue = ranking_item.find('li', class_='responsive-ranking-list_placeName__9HN2O').text.strip()
-    image_url = ranking_item.find('img')['src']  # Extracting image URL
+    image_url = ranking_item.find('img')['src']
 
     concert_data = {
         'Rank': rank,
