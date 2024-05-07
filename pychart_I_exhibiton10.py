@@ -1,4 +1,3 @@
-import json
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -8,17 +7,22 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
+import json
 from datetime import datetime
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"interparkexhibition/pychart_I_exhibition{current_date}.json"
 
-# 웹드라이버 설치
+# 웹드라이버 설정
 options = ChromeOptions()
 options.add_argument("--headless")
 browser = webdriver.Chrome(options=options)
+
+# 웹 사이트 접속
 browser.get("https://tickets.interpark.com/contents/ranking")
+time.sleep(5)  # 페이지 로딩 대기
+
 
 # RadioButton_wrap__761f0 클래스를 가진 div 요소를 찾기
 search_box = browser.find_element(By.CLASS_NAME, "RadioButton_wrap__761f0")
