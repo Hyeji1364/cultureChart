@@ -1,23 +1,22 @@
+import json
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui.WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
-import json
 import time
 from datetime import datetime
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"interparkconcert/pychart_I_concert10{current_date}.json"
+filename = f"interparkconcert/pychart_I_concert10_{current_date}.json"
 
-# 웹드라이버 설정
+# ChromeDriver 설정
 options = ChromeOptions()
-options.add_argument("--headless")  # GUI 없이 실행
-service = ChromeService(executable_path=ChromeDriverManager().install())
+options.add_argument("--headless")  # 브라우저 창 없이 실행
 browser = webdriver.Chrome(options=options)
 browser.get("https://tickets.interpark.com/contents/ranking")
 
@@ -39,10 +38,12 @@ try:
     )
     monthly_tab_button.click()
     print("Clicked '월간' tab.")
-    time.sleep(3)  # 페이지 로드 대기
+    # 월간 탭의 데이터 로드를 기다리기 위해 sleep 시간을 증가
+    time.sleep(5)
 except Exception as e:
     print("Error clicking '월간' tab:", e)
 
+# 페이지 소스 가져오기 및 파싱
 page_source = browser.page_source
 soup = BeautifulSoup(page_source, 'html.parser')
 
@@ -69,7 +70,7 @@ for ranking_item in ranking_container.find_all('div', class_='responsive-ranking
 with open(filename, 'w', encoding='utf-8') as file:
     json.dump(concerts, file, ensure_ascii=False, indent=4)
 
-# 결과 출력
+# 출력
 for concert_data in concerts:
     print(concert_data)
 
