@@ -34,7 +34,7 @@ except Exception as e:
 # "월간" 탭 클릭
 try:
     monthly_tab_button = WebDriverWait(browser, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '월간')]"))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "button[name='월간']"))
     )
     monthly_tab_button.click()
     print("Clicked '월간' tab.")
