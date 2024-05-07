@@ -12,13 +12,13 @@ from datetime import datetime
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"chart_I_concert10_{current_date}.json"
+filename = f"interparkconcert/pychart_I_concert10{current_date}.json"
 
 # 웹드라이버 설정
 options = ChromeOptions()
 options.add_argument("--headless")  # GUI 없이 실행
 service = ChromeService(executable_path=ChromeDriverManager().install())
-browser = webdriver.Chrome(service=service, options=options)
+browser = webdriver.Chrome(options=options)
 browser.get("https://tickets.interpark.com/contents/ranking")
 
 # "콘서트" 탭 클릭
