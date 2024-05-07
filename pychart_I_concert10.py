@@ -17,6 +17,7 @@ filename = f"chart_I_concert10_{current_date}.json"
 # 웹드라이버 설정
 options = ChromeOptions()
 options.add_argument("--headless")
+browser = webdriver.Chrome(options=options)
 browser.get("https://tickets.interpark.com/contents/ranking")
 
 # RadioButton_wrap__761f0 클래스를 가진 div 요소를 찾기
