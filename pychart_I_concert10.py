@@ -31,15 +31,11 @@ try:
 except Exception as e:
     print("Error clicking '콘서트' tab:", e)
 
-# "월간" 탭 클릭
+# "월간" 탭 버튼을 찾아서 클릭하기
 try:
-    monthly_tab_button = WebDriverWait(browser, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, "button[name='월간']"))
-    )
-    monthly_tab_button.click()
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='월간']"))).click()
     print("Clicked '월간' tab.")
-    # 월간 탭의 데이터 로드를 기다리기 위해 sleep 시간을 증가
-    time.sleep(5)
+    time.sleep(3)
 except Exception as e:
     print("Error clicking '월간' tab:", e)
 
