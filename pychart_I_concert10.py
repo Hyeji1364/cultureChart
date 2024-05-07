@@ -1,4 +1,3 @@
-import json
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -7,57 +6,56 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
+import json
 import time
 from datetime import datetime
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"interparkconcert/pychart_I_concert10{current_date}.json"
-
-# WebDriverManager로 ChromeDriver 설치 및 설정
-webdriver_manager = ChromeDriverManager()
-webdriver_manager.install()
-webdriver_path = webdriver_manager.driver
+filename = f"chart_I_concert10_{current_date}.json"
 
 # 웹드라이버 설정
 options = ChromeOptions()
-options.add_argument("--headless")
-browser = webdriver.Chrome(options=options)  # ChromeOptions를 전달합니다.
+options.add_argument("--headless")  # GUI 없이 실행
+service = ChromeService(executable_path=ChromeDriverManager().install())
+browser = webdriver.Chrome(service=service, options=options)
 browser.get("https://tickets.interpark.com/contents/ranking")
 
-# "콘서트" 탭 버튼을 찾아서 클릭하기
+# "콘서트" 탭 클릭
 try:
     concert_tab_button = WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '콘서트')]"))
     )
     concert_tab_button.click()
     print("Clicked '콘서트' tab.")
-    time.sleep(3)  # 페이지가 완전히 로드될 때까지 대기
+    time.sleep(3)  # 페이지 로드 대기
 except Exception as e:
     print("Error clicking '콘서트' tab:", e)
 
-# "월간" 탭 버튼을 찾아서 클릭하기
+# "월간" 탭 클릭
 try:
-    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '월간')]"))).click()
+    monthly_tab_button = WebDriverWait(browser, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '월간')]"))
+    )
+    monthly_tab_button.click()
     print("Clicked '월간' tab.")
-    time.sleep(3)
+    time.sleep(3)  # 페이지 로드 대기
 except Exception as e:
     print("Error clicking '월간' tab:", e)
 
 page_source = browser.page_source
 soup = BeautifulSoup(page_source, 'html.parser')
 
-# Find the parent container for ranking items
+# 순위 정보 컨테이너 추출
 ranking_container = soup.find('div', class_='responsive-ranking-list_rankingListWrap__GM0yK')
-
 concerts = []
 
-# 1-3위 데이터 추출
+# 데이터 추출
 for ranking_item in ranking_container.find_all('div', class_='responsive-ranking-list_rankingItem__PuQPJ'):
     rank = ranking_item.find('div', class_='RankingBadge_badgeNumber__84aeb').text.strip()
     concert_name = ranking_item.find('li', class_='responsive-ranking-list_goodsName__aHHGY').text.strip()
     venue = ranking_item.find('li', class_='responsive-ranking-list_placeName__9HN2O').text.strip()
-    image_url = ranking_item.find('img')['src']  # Extracting image URL
+    image_url = ranking_item.find('img')['src']
 
     concert_data = {
         'Rank': rank,
@@ -67,26 +65,12 @@ for ranking_item in ranking_container.find_all('div', class_='responsive-ranking
     }
     concerts.append(concert_data)
 
-# 4-10위 콘서트 순위 정보 추출
-rank_list_4_to_10 = soup.find_all('div', class_='responsive-ranking-list_rankingItem__PuQPJ')[3:10]  # 4위부터 10위까지의 항목 추출
-for ranking_item in rank_list_4_to_10:
-    rank = ranking_item.find('div', class_='RankingBadge_badgeNumberColor__d45a0').text.strip()
-    concert_name = ranking_item.find('li', class_='responsive-ranking-list_goodsName__aHHGY').text.strip()
-    venue = ranking_item.find('li', class_='responsive-ranking-list_placeName__9HN2O').text.strip()
-    image_url = ranking_item.find('img')['src']  # Extracting image URL
-
-    concert_data = {
-        'Rank': rank,
-        'ConcertName': concert_name,
-        'Venue': venue,
-        'ImageURL': image_url
-    }
-    concerts.append(concert_data)
-
-# json파일로 저장
+# JSON 파일로 저장
 with open(filename, 'w', encoding='utf-8') as file:
     json.dump(concerts, file, ensure_ascii=False, indent=4)
 
-# 출력
+# 결과 출력
 for concert_data in concerts:
     print(concert_data)
+
+browser.quit()
