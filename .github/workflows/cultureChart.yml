@@ -68,7 +68,7 @@ jobs:
         git add melonexhibiton/pychart_M_exhibiton10*.json
         git add ticketmusical/pychart_T_musical10*.json
         git add interparkconcert/pychart_I_concert10*.json
-        git add interparkexhibition/pychart_I_exhibiton10*.json
+        git add interparkexhibiton/pychart_I_exhibiton10*.json
         git commit -m "차트 수집 완료"
 
     - name: push
