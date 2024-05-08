@@ -12,7 +12,7 @@ from datetime import datetime
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"interparkexhibition/pychart_I_exhibition10{current_date}.json"
+filename = f"chart_I_exhibition10_{current_date}.json"
 
 # WebDriverManager로 ChromeDriver 설치 및 설정
 webdriver_manager = ChromeDriverManager()
@@ -25,22 +25,22 @@ options.add_argument("--headless")
 browser = webdriver.Chrome(options=options)  # ChromeOptions를 전달합니다.
 browser.get("https://tickets.interpark.com/contents/ranking")
 
-# "콘서트" 탭 버튼을 찾아서 클릭하기
+# "전시/행사" 탭 버튼을 찾아서 클릭하기
 try:
     exhibition_tab_button = WebDriverWait(browser, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '전시/행사')]"))
+        EC.element_to_be_clickable((By.XPATH, "//button[text()='전시/행사']"))
     )
     exhibition_tab_button.click()
     print("Clicked '전시/행사' tab.")
     time.sleep(3)  # 페이지가 완전히 로드될 때까지 대기
 except Exception as e:
-    print("Error clicking '콘서트' tab:", e)
+    print("Error clicking '전시/행사' tab:", e)
 
 # "월간" 탭 버튼을 찾아서 클릭하기
 try:
-    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '월간')]"))).click()
+    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='월간']"))).click()
     print("Clicked '월간' tab.")
-    time.sleep(3)
+    time.sleep(5)
 except Exception as e:
     print("Error clicking '월간' tab:", e)
 
@@ -61,14 +61,14 @@ for ranking_item in ranking_container.find_all('div', class_='responsive-ranking
 
     exhibition_data = {
         'Rank': rank,
-        'ExhibitionName': exhibition_name,
+        'exhibitionName': exhibition_name,
         'Venue': venue,
         'ImageURL': image_url
     }
     exhibitions.append(exhibition_data)
-
+    
 # 4-10위 전시/행사 순위 정보 추출
-rank_list_4_to_10 = soup.find_all('div', class_='responsive-ranking-list_rankingItem__PuQPJ')[3:10]  # 4위부터 10위까지의 항목 추출
+rank_list_4_to_10 = soup.find_all('div', class_='responsive-ranking-list_rankingItem__PuQPJ')[3:10]
 for ranking_item in rank_list_4_to_10:
     rank = ranking_item.find('div', class_='RankingBadge_badgeNumberColor__d45a0').text.strip()
     exhibition_name = ranking_item.find('li', class_='responsive-ranking-list_goodsName__aHHGY').text.strip()
@@ -77,7 +77,7 @@ for ranking_item in rank_list_4_to_10:
 
     exhibition_data = {
         'Rank': rank,
-        'ExhibitionName': exhibition_name,
+        'exhibitionName': exhibition_name,
         'Venue': venue,
         'ImageURL': image_url
     }
@@ -90,6 +90,5 @@ with open(filename, 'w', encoding='utf-8') as file:
 # 출력
 for exhibition_data in exhibitions:
     print(exhibition_data)
-    print(exhibition_data)
-
+    
 browser.quit()
