@@ -27,10 +27,10 @@ browser.get("https://tickets.interpark.com/contents/ranking")
 
 # "뮤지컬" 탭 버튼을 찾아서 클릭하기
 try:
-    concert_tab_button = WebDriverWait(browser, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '뮤지컬')]"))
+    musical_tab_button = WebDriverWait(browser, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[text()='뮤지컬']"))
     )
-    concert_tab_button.click()
+    musical_tab_button.click()
     print("Clicked '뮤지컬' tab.")
     time.sleep(3)  # 페이지가 완전히 로드될 때까지 대기
 except Exception as e:
