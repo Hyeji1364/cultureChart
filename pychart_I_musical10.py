@@ -14,21 +14,23 @@ from datetime import datetime
 current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"interparkmusical/pychart_I_musical10{current_date}.json"
 
+# WebDriverManager로 ChromeDriver 설치 및 설정
+webdriver_manager = ChromeDriverManager()
+webdriver_manager.install()
+webdriver_path = webdriver_manager.driver
+
 # 웹드라이버 설정
 options = ChromeOptions()
 options.add_argument("--headless")
-browser = webdriver.Chrome(options=options)
+browser = webdriver.Chrome(options=options)  # ChromeOptions를 전달합니다.
 browser.get("https://tickets.interpark.com/contents/ranking")
 
-# RadioButton_wrap__761f0 클래스를 가진 div 요소를 찾기
-search_box = browser.find_element(By.CLASS_NAME, "RadioButton_wrap__761f0")
-
-# "콘서트" 탭 버튼을 찾아서 클릭하기
+# "뮤지컬" 탭 버튼을 찾아서 클릭하기
 try:
-    musical_tab_button = WebDriverWait(browser, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[text()='뮤지컬']"))
+    concert_tab_button = WebDriverWait(browser, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '뮤지컬')]"))
     )
-    musical_tab_button.click()
+    concert_tab_button.click()
     print("Clicked '뮤지컬' tab.")
     time.sleep(3)  # 페이지가 완전히 로드될 때까지 대기
 except Exception as e:
@@ -48,7 +50,7 @@ soup = BeautifulSoup(page_source, 'html.parser')
 # Find the parent container for ranking items
 ranking_container = soup.find('div', class_='responsive-ranking-list_rankingListWrap__GM0yK')
 
-musicals = []
+concerts = []
 
 # 1-3위 데이터 추출
 for ranking_item in ranking_container.find_all('div', class_='responsive-ranking-list_rankingItem__PuQPJ'):
@@ -65,7 +67,7 @@ for ranking_item in ranking_container.find_all('div', class_='responsive-ranking
     }
     musicals.append(musical_data)
 
-# 4-10위 전시 순위 정보 추출
+# 4-10위 뮤지컬 순위 정보 추출
 rank_list_4_to_10 = soup.find_all('div', class_='responsive-ranking-list_rankingItem__PuQPJ')[3:10]  # 4위부터 10위까지의 항목 추출
 for ranking_item in rank_list_4_to_10:
     rank = ranking_item.find('div', class_='RankingBadge_badgeNumberColor__d45a0').text.strip()
