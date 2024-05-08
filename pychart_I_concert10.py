@@ -36,13 +36,6 @@ try:
 except Exception as e:
     print("Error clicking '콘서트' tab:", e)
 
-# "월간" 탭 버튼을 찾아서 클릭하기
-try:
-    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '월간')]"))).click()
-    print("Clicked '월간' tab.")
-    time.sleep(3)
-except Exception as e:
-    print("Error clicking '월간' tab:", e)
 
 page_source = browser.page_source
 soup = BeautifulSoup(page_source, 'html.parser')
