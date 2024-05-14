@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 import time
 from datetime import datetime
 
+
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"interparkconcert/pychart_I_concert10{current_date}.json"
