@@ -15,6 +15,7 @@ from datetime import datetime
 current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"interparkconcert/pychart_I_concert10{current_date}.json"
 
+
 # 웹드라이버 설정
 options = ChromeOptions()
 options.add_argument("--headless")
