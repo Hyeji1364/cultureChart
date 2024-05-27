@@ -59,13 +59,13 @@ tracks = soup.select(".ranking_product .ranking_product_table tbody tr")
 for track in tracks:
     rank = track.select_one(".rank_number").text.strip()
     title = track.select_one(".ranking_product_title").text.strip()
-    place = track.select_one(".ranking_product_place").text.strip()
-    image_url = track.select_one(".ranking_product_imgbox img").get('src')
+    Venue = track.select_one(".ranking_product_place").text.strip()
+    ImageURL = track.select_one(".ranking_product_imgbox img").get('src')
 
     music_data.append({
         "rank": rank,
         "title": title,
-        "artist": place,
+        "Venue": place,
         "imageURL": image_url
     })
 
