@@ -52,10 +52,10 @@ if rank_best_div:
         concert_info = {}
         concert_link = concert_div.find('a', href=True)
         if concert_link:
-            concert_info['Title'] = concert_link['title']
+            concert_info['title'] = concert_link['title']
             concert_info['ImageURL'] = concert_link.find('img')['src']
             concert_info['Venue'] = concert_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
-            concert_info['Rank'] = concert_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
+            concert_info['rank'] = concert_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
             concerts_data.append(concert_info)
 
 # 4-10위 콘서트 순위 정보 추출
@@ -75,10 +75,10 @@ for item in items:
     else:
         rank = 'No rank provided'
 
-    concert_info['Title'] = title_link.text.strip() if title_link else 'No title provided'
+    concert_info['title'] = title_link.text.strip() if title_link else 'No title provided'
     concert_info['Image_url'] = image['src'] if image else 'No image provided'
     concert_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
-    concert_info['Rank'] = rank
+    concert_info['rank'] = rank
     concerts_data.append(concert_info)
 
 # JSON 파일로 저장
