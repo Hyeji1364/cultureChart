@@ -40,8 +40,8 @@ for row in rows:
     venue = row.find_element(By.CSS_SELECTOR, 'td:nth-child(4)').text.strip()
 
     data.append({
-        'Rank': rank,
-        'Title': title,
+        'rank': rank,
+        'title': title,
         'Venue': venue,
         'ImageURL': image
     })
