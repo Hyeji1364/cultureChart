@@ -63,10 +63,10 @@ for track in tracks:
     image_url = track.select_one(".ranking_product_imgbox img").get('src')
 
     music_data.append({
-        "rank": rank,
-        "title": title,
-        "artist": place,
-        "imageURL": image_url
+        "Rank": rank,
+        "Title": title,
+        "Venue": place,
+        "ImageURL": image_url
     })
 
 # 데이터를 JSON 파일로 저장
