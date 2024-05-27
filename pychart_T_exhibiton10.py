@@ -63,8 +63,8 @@ for track in tracks:
     image_url = track.select_one(".ranking_product_imgbox img").get('src')
 
     music_data.append({
-        "Rank": rank,
-        "Title": title,
+        "rank": rank,
+        "title": title,
         "Venue": place,
         "ImageURL": image_url
     })
