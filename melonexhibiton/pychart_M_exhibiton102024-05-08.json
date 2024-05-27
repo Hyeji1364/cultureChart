@@ -1,61 +1,61 @@
 [
     {
-        "Rank": "1",
-        "Title": "Urban Chronicles：American Color Photography",
+        "rank": "1",
+        "title": "Urban Chronicles：American Color Photography",
         "Venue": "현대카드 스토리지",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/03/20240327104009b134a8a0-7539-436f-a44a-7cd803ef3c5a.jpg"
     },
     {
-        "Rank": "2",
-        "Title": "［얼리버드 오픈］리얼뱅크시 REAL BANKSY－Banksy is NOWHERE",
+        "rank": "2",
+        "title": "［얼리버드 오픈］리얼뱅크시 REAL BANKSY－Banksy is NOWHERE",
         "Venue": "그라운드서울 기획전시관",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/20240429091330a6b3d259-aace-4e03-b1f4-b492643e1bd6.jpg"
     },
     {
-        "Rank": "3",
-        "Title": "백건우와 모차르트",
+        "rank": "3",
+        "title": "백건우와 모차르트",
         "Venue": "LG아트센터 서울 LG SIGNATURE 홀",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/20240110194537586e0b2d-153a-4ba7-be4d-1e4465b5dcca.jpg"
     },
     {
-        "Rank": "4",
-        "Title": "스튜디오 지브리 애니메이션의 거장 타카하타 이사오전",
+        "rank": "4",
+        "title": "스튜디오 지브리 애니메이션의 거장 타카하타 이사오전",
         "Venue": "세종문화회관 세종미술관 1,2관",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/20240426180416f660d34f-8e9e-4c95-9dfd-29a44a9fe7e8.jpg"
     },
     {
-        "Rank": "4",
-        "Title": "［1，2차 오픈］크루즈 디에즈－RGB，세기의 컬러들",
+        "rank": "4",
+        "title": "［1，2차 오픈］크루즈 디에즈－RGB，세기의 컬러들",
         "Venue": "예술의전당 한가람미술관 제 7전시실",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/20240409173208cea4c41d-246a-44e8-a671-9e2242c0bff1.jpg"
     },
     {
-        "Rank": "6",
-        "Title": "일무",
+        "rank": "6",
+        "title": "일무",
         "Venue": "세종문화회관 대극장",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/20240122222048e653824f-dce2-4146-839a-5296944aac8c.jpg"
     },
     {
-        "Rank": "7",
-        "Title": "새벽부터 황혼까지－스웨덴 국립미술관 컬렉션",
+        "rank": "7",
+        "title": "새벽부터 황혼까지－스웨덴 국립미술관 컬렉션",
         "Venue": "마이아트뮤지엄",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/03/20240318143630ad2dca31-a342-4605-91ab-61107be501b3.jpg"
     },
     {
-        "Rank": "7",
-        "Title": "이은결 연출 ‘멜리에스 일루션’",
+        "rank": "7",
+        "title": "이은결 연출 ‘멜리에스 일루션’",
         "Venue": "LG아트센터 서울 U+ 스테이지",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/20240109214259e96ac590-0016-464c-828a-a1ce5574a2b3.jpg"
     },
     {
-        "Rank": "9",
-        "Title": "노래는 맛있게，표정은 밝게，마음은 즐겁게",
+        "rank": "9",
+        "title": "노래는 맛있게，표정은 밝게，마음은 즐겁게",
         "Venue": "세종문화회관 체임버홀",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/20240419102550e3d39a56-0e78-44e4-ba48-8056cf0e4b11.jpg"
     },
     {
-        "Rank": "9",
-        "Title": "서울시국악관현악단 실내악 시리즈 Ⅱ",
+        "rank": "9",
+        "title": "서울시국악관현악단 실내악 시리즈 Ⅱ",
         "Venue": "세종문화회관 체임버홀",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/202401242125095940d520-82ed-47c5-860a-0a80f59248b2.jpg"
     }
