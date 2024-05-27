@@ -52,10 +52,10 @@ if rank_best_div:
         musical_info = {}
         musical_link = musical_div.find('a', href=True)
         if musical_link:
-            musical_info['Title'] = musical_link['title']
+            musical_info['title'] = musical_link['title']
             musical_info['ImageURL'] = musical_link.find('img')['src']
             musical_info['Venue'] = musical_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
-            musical_info['Rank'] = musical_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
+            musical_info['rank'] = musical_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
             musicals_data.append(musical_info)
             
 # 뮤지컬 순위 정보 추출
@@ -75,10 +75,10 @@ for item in items:
     else:
         rank = 'No rank provided'
 
-    musical_info['Title'] = title_link.text.strip() if title_link else 'No title provided'
+    musical_info['title'] = title_link.text.strip() if title_link else 'No title provided'
     musical_info['ImageURL'] = image['src'] if image else 'No image provided'
     musical_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
-    musical_info['Rank'] = rank
+    musical_info['rank'] = rank
     musicals_data.append(musical_info)
 
 # 결과를 JSON 파일로 저장
