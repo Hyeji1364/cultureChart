@@ -52,10 +52,10 @@ if rank_best_div:
         event_info = {}
         event_link = event_div.find('a', href=True)
         if event_link:
-            event_info['title'] = event_link['title']
-            event_info['image_url'] = event_link.find('img')['src']
-            event_info['date_and_location'] = event_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
-            event_info['rank'] = event_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
+            event_info['Title'] = event_link['title']
+            event_info['ImageURL'] = event_link.find('img')['src']
+            event_info['Venue'] = event_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
+            event_info['Rank'] = event_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
             events_data.append(event_info)
 
 # 전시/행사 순위 정보 추출
@@ -76,10 +76,10 @@ if rank_list:
         else:
             rank = 'No rank provided'
 
-        event_info['title'] = title_link.text.strip() if title_link else 'No title provided'
-        event_info['image_url'] = image['src'] if image else 'No image provided'
-        event_info['date_and_location'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
-        event_info['rank'] = rank
+        event_info['Title'] = title_link.text.strip() if title_link else 'No title provided'
+        event_info['ImageURL'] = image['src'] if image else 'No image provided'
+        event_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
+        event_info['Rank'] = rank
         events_data.append(event_info)
 
 # 결과를 JSON 파일로 저장
