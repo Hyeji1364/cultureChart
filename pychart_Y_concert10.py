@@ -14,14 +14,12 @@ from datetime import datetime
 current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"yes24concert/pychart_Y_concert10{current_date}.json"
 
-# 웹드라이버 설정
+# 웹드라이버 설치
 options = ChromeOptions()
 options.add_argument("--headless")
 browser = webdriver.Chrome(options=options)
-
-# 웹 사이트 접속
 browser.get("http://ticket.yes24.com/Rank/All")
-time.sleep(2)  # 페이지 로딩 대기
+time.sleep(5)  # 페이지 로딩 대기
 
 # 콘서트 카테고리로 이동
 concert_link = WebDriverWait(browser, 10).until(
@@ -35,7 +33,7 @@ monthly_category = WebDriverWait(browser, 10).until(
     EC.presence_of_element_located((By.XPATH, "//a[contains(@categoryid, '3') and contains(text(), '월간')]"))
 )
 monthly_category.click()
-time.sleep(2)  # 월간 카테고리 로딩 대기
+time.sleep(5)  # 월간 카테고리 로딩 대기
 
 # 웹 페이지 소스 가져오기
 page_source = browser.page_source
@@ -58,28 +56,29 @@ if rank_best_div:
             concert_info['rank'] = concert_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
             concerts_data.append(concert_info)
 
-# 4-10위 콘서트 순위 정보 추출
-rank_list = soup.find_all('div', class_='rank-list')[0]  # 첫번째 rank-list 컨테이너 선택
-items = rank_list.find_all('div', recursive=False)[:7]  # 4위부터 10위까지의 항목 추출
-for item in items:
-    concert_info = {}
-    title_link = item.find('p', class_='rank-list-tit').find('a')
-    image = item.find('img', class_='rank-list-img')
-    date_location = item.find_all('p')[-1]
-    fluctuation_div = item.find('div', class_='fluctuation')  # 순위 정보를 포함하는 div 태그를 찾는다.
+# 전체 콘서트 순위 정보 추출
+rank_lists = soup.find_all('div', class_='rank-list')  # 모든 rank-list 컨테이너 선택
+for rank_list in rank_lists:
+    items = rank_list.find_all('div', recursive=False)  # 모든 항목 추출
+    for item in items:
+        concert_info = {}
+        title_link = item.find('p', class_='rank-list-tit').find('a')
+        image = item.find('img', class_='rank-list-img')
+        date_location = item.find_all('p')[-1]
+        fluctuation_div = item.find('div', class_='fluctuation')  # 순위 정보를 포함하는 div 태그를 찾는다.
 
-    # 순위 정보를 추출
-    if fluctuation_div:
-        rank_span = fluctuation_div.find('p').find('span')  # 첫 번째 <p> 태그 내의 <span>에서 순위를 찾는다.
-        rank = rank_span.text.strip() if rank_span else 'No rank provided'
-    else:
-        rank = 'No rank provided'
+        # 순위 정보를 추출
+        if fluctuation_div:
+            rank_span = fluctuation_div.find('p').find('span')  # 첫 번째 <p> 태그 내의 <span>에서 순위를 찾는다.
+            rank = rank_span.text.strip() if rank_span else 'No rank provided'
+        else:
+            rank = 'No rank provided'
 
-    concert_info['title'] = title_link.text.strip() if title_link else 'No title provided'
-    concert_info['Image_url'] = image['src'] if image else 'No image provided'
-    concert_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
-    concert_info['rank'] = rank
-    concerts_data.append(concert_info)
+        concert_info['title'] = title_link.text.strip() if title_link else 'No title provided'
+        concert_info['ImageURL'] = image['src'] if image else 'No image provided'
+        concert_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
+        concert_info['rank'] = rank
+        concerts_data.append(concert_info)
 
 # JSON 파일로 저장
 with open(filename, 'w', encoding='utf-8') as file:
