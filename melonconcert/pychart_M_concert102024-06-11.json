@@ -55,20 +55,20 @@
     },
     {
         "rank": "7",
-        "change": "4 단계 하락",
-        "title": "TUNE UP STAGE［튠업 25기 선정기념 공연 ＃03．김뜻돌 X 다섯］",
-        "Venue": "CJ아지트 광흥창",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240605112011be668f29-09ae-41b4-b7e3-5e4ad074711c.jpg",
-        "date": "2024.06.21",
-        "site": "https://ticket.melon.com/ranking/index.htm"
-    },
-    {
-        "rank": "8",
-        "change": "1 단계 하락",
+        "change": "-",
         "title": "2024 SUPER JUNIOR 〈SUPER SHOW SPIN－OFF：Halftime〉 in SEOUL",
         "Venue": "KSPO DOME (올림픽 체조경기장)",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240502135619c2e1e232-74ba-4ed0-a698-0465072f30e2.png",
         "date": "2024.06.22 ~  2024.06.23",
+        "site": "https://ticket.melon.com/ranking/index.htm"
+    },
+    {
+        "rank": "8",
+        "change": "5 단계 하락",
+        "title": "TUNE UP STAGE［튠업 25기 선정기념 공연 ＃03．김뜻돌 X 다섯］",
+        "Venue": "CJ아지트 광흥창",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240605112011be668f29-09ae-41b4-b7e3-5e4ad074711c.jpg",
+        "date": "2024.06.21",
         "site": "https://ticket.melon.com/ranking/index.htm"
     },
     {

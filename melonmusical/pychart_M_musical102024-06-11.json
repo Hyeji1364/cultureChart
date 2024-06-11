@@ -1,35 +1,35 @@
 [
     {
         "rank": "1",
-        "change": "1 단계 상승",
-        "title": "사이먼 스톤 연출 ‘벚꽃동산’",
-        "Venue": "LG아트센터 서울 LG SIGNATURE 홀",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240516141058eb17110f-8a5e-4fc4-ba82-32a2fcd4b18f.jpg",
-        "date": "2024.06.04 ~  2024.07.07"
-    },
-    {
-        "rank": "2",
-        "change": "1 단계 하락",
+        "change": "-",
         "title": "뮤지컬 〈프랑켄슈타인〉 10주년 기념공연",
         "Venue": "블루스퀘어 신한카드홀",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/20240423172356136720c2-47ce-4806-9720-51f10f152487.jpg",
         "date": "2024.06.05 ~  2024.08.25"
     },
     {
-        "rank": "3",
-        "change": "1 단계 상승",
-        "title": "뮤지컬 〈그레이트 코멧〉",
-        "Venue": "유니버설아트센터",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/2024012613313215790e76-bf98-4c42-847c-ba77d5f72dac.jpg",
-        "date": "2024.03.26 ~  2024.06.16"
+        "rank": "2",
+        "change": "-",
+        "title": "사이먼 스톤 연출 ‘벚꽃동산’",
+        "Venue": "LG아트센터 서울 LG SIGNATURE 홀",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240516141058eb17110f-8a5e-4fc4-ba82-32a2fcd4b18f.jpg",
+        "date": "2024.06.04 ~  2024.07.07"
     },
     {
-        "rank": "4",
-        "change": "-",
+        "rank": "3",
+        "change": "1 단계 상승",
         "title": "뮤지컬 〈베르사유의 장미〉",
         "Venue": "충무아트센터 대극장",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/2024052819390959351f00-51ba-4540-9c9c-9588bc1ada99.jpg",
         "date": "2024.07.16 ~  2024.10.13"
+    },
+    {
+        "rank": "4",
+        "change": "-",
+        "title": "뮤지컬 〈그레이트 코멧〉",
+        "Venue": "유니버설아트센터",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/2024012613313215790e76-bf98-4c42-847c-ba77d5f72dac.jpg",
+        "date": "2024.03.26 ~  2024.06.16"
     },
     {
         "rank": "5",
@@ -41,19 +41,19 @@
     },
     {
         "rank": "6",
-        "change": "3 단계 하락",
-        "title": "뮤지컬 〈헤드윅〉",
-        "Venue": "샤롯데씨어터",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/202401261731424a9c5dc2-6f4e-4986-980f-1027b126696c.jpg",
-        "date": "2024.03.22 ~  2024.06.23"
-    },
-    {
-        "rank": "7",
-        "change": "1 단계 상승",
+        "change": "2 단계 상승",
         "title": "패밀리 아이스쇼 〈피터팬 온 아이스〉 오리지널 내한공연",
         "Venue": "목동아이스링크",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240514170436f7bedbb1-cf1d-4a59-a570-fa45481177c9.jpg",
         "date": "2024.08.14 ~  2024.08.18"
+    },
+    {
+        "rank": "7",
+        "change": "4 단계 하락",
+        "title": "뮤지컬 〈헤드윅〉",
+        "Venue": "샤롯데씨어터",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/202401261731424a9c5dc2-6f4e-4986-980f-1027b126696c.jpg",
+        "date": "2024.03.22 ~  2024.06.23"
     },
     {
         "rank": "8",
