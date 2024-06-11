@@ -55,6 +55,7 @@ for track in tracks:
     title = track.select_one("div.show_infor p.infor_text a").text.strip()
     place = track.select_one("td:nth-child(4)").text.strip()
     image_url = track.select_one("div.thumb_90x125 img").get('src')
+    site_url = "https://ticket.melon.com/ranking/index.htm"
 
     # 날짜 정보 추출
     date_elements = track.select("ul.show_date li")
@@ -66,7 +67,8 @@ for track in tracks:
         "title": title,
         "Venue": place,
         "ImageURL": image_url,
-        "date":date
+        "date":date,
+        "site": site_url
     })
 
 # 데이터를 JSON 파일로 저장
