@@ -63,7 +63,6 @@ for track in tracks:
     image_url = track.select_one(".ranking_product_imgbox img").get('src')
     site_url = "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     
-
     # 순위 변동 상태 추출
     change_element = track.select_one(".rank_status span")
     change = change_element.get('class', [''])[0] if change_element else ''
