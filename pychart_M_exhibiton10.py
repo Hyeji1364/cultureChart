@@ -49,15 +49,24 @@ music_data = []
 tracks = soup.select(".tbl.tbl_style02 tbody tr")
 for track in tracks:
     rank = track.select_one("td.fst .ranking").text.strip()
+    change = track.select_one("td.fst .change").text.strip()
+    # change 텍스트에서 불필요한 공백 제거
+    change = ' '.join(change.split())
     title = track.select_one("div.show_infor p.infor_text a").text.strip()
     place = track.select_one("td:nth-child(4)").text.strip()
     image_url = track.select_one("div.thumb_90x125 img").get('src')
 
+    # 날짜 정보 추출
+    date_elements = track.select("ul.show_date li")
+    date = " ".join([element.text.strip() for element in date_elements])
+
     music_data.append({
         "rank": rank,
+        "change": change,
         "title": title,
         "Venue": place,
-        "ImageURL": image_url
+        "ImageURL": image_url,
+        "date":date
     })
 
 # 데이터를 JSON 파일로 저장
