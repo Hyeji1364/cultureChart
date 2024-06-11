@@ -61,12 +61,31 @@ for track in tracks:
     title = track.select_one(".ranking_product_title").text.strip()
     place = track.select_one(".ranking_product_place").text.strip()
     image_url = track.select_one(".ranking_product_imgbox img").get('src')
+    site_url = "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
+
+    # 순위 변동 상태 추출
+    change_element = track.select_one(".rank_status span")
+    change = change_element.get('class', [''])[0] if change_element else ''
+    change_text = change_element.text.strip() if change_element else '변동 없음'
+
+    # 불필요한 공백 제거 및 변환 로직 추가
+    change_text = ' '.join(change_text.split())
+    if '상승' in change_text:
+        change_text = change_text.replace('계단', '단계')
+    elif '하락' in change_text:
+        change_text = change_text.replace('계단', '단계')
+    elif '신규 진입' in change_text:
+        change_text = 'NEW'
+    elif '변동 없음' in change_text:
+        change_text = '-'
 
     music_data.append({
         "rank": rank,
+        "change": change_text,
         "title": title,
         "Venue": place,
-        "ImageURL": image_url
+        "ImageURL": image_url,
+        "site": site_url
     })
 
 # 데이터를 JSON 파일로 저장
