@@ -47,7 +47,7 @@ jobs:
         python pychart_M_musical10.py
         python pychart_T_concert10.py
         python pychart_T_exhibiton10.py
-        python pychart_Y_concert10.py
+        python pychart_T_musical10.py
         
     - name: commits
       run : |
