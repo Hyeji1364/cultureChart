@@ -25,7 +25,7 @@ WebDriverWait(browser, 10).until(
     EC.presence_of_element_located((By.CLASS_NAME, "ranking_product"))
 )
 
-# "전시" 탭 버튼을 찾아서 클릭하기
+# "뮤지컬" 탭 버튼을 찾아서 클릭하기
 try:
     musical_tab_button = WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[text()='뮤지컬']"))
@@ -60,6 +60,7 @@ for track in tracks:
     rank = track.select_one(".rank_number").text.strip()
     title = track.select_one(".ranking_product_title").text.strip()
     place = track.select_one(".ranking_product_place").text.strip()
+    date = track.select_one(".ranking_product_period").text.strip() if track.select_one(".ranking_product_period") else 'No date provided'
     image_url = track.select_one(".ranking_product_imgbox img").get('src')
     site_url = "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
 
@@ -84,6 +85,7 @@ for track in tracks:
         "change": change_text,
         "title": title,
         "Venue": place,
+        "date": date,
         "ImageURL": image_url,
         "site": site_url
     })

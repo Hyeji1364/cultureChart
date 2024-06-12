@@ -60,6 +60,7 @@ for track in tracks:
     rank = track.select_one(".rank_number").text.strip()
     title = track.select_one(".ranking_product_title").text.strip()
     place = track.select_one(".ranking_product_place").text.strip()
+    date = track.select_one(".ranking_product_period").text.strip() if track.select_one(".ranking_product_period") else 'No date provided'
     image_url = track.select_one(".ranking_product_imgbox img").get('src')
     site_url = "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     
@@ -84,6 +85,7 @@ for track in tracks:
         "change": change_text,
         "title": title,
         "Venue": place,
+        "date": date,
         "ImageURL": image_url,
         "site": site_url
     })

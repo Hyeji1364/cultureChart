@@ -100,12 +100,11 @@ for rank_list in rank_lists:
             rank = 'No rank provided'
             change = '-'
 
+        concert_info['title'] = title_link.text.strip() if title_link else 'No title provided'
+        concert_info['ImageURL'] = image['src'] if image else 'No image provided'
+        concert_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
         concert_info['rank'] = rank
         concert_info['change'] = change
-        concert_info['title'] = title_link.text.strip() if title_link else 'No title provided'
-        concert_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
-        concert_info['ImageURL'] = image['src'] if image else 'No image provided'
-
         concerts_data.append(concert_info)
 
 # JSON 파일로 저장
