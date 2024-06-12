@@ -55,20 +55,20 @@
     },
     {
         "rank": "7",
-        "change": "3 단계 상승",
-        "title": "워터밤 서울 2024（WATERBOMB SEOUL 2024）",
-        "Venue": "일산 킨텍스(KINTEX) 야외 글로벌 스테이지(KINTEX 제2전시장)",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/02/202402211356400c7f8b20-2a5f-4aa8-9c06-fe72004a0c91.jpg",
-        "date": "2024.07.05 ~  2024.07.07",
+        "change": "1 단계 상승",
+        "title": "2024 SUPER JUNIOR 〈SUPER SHOW SPIN－OFF：Halftime〉 in SEOUL",
+        "Venue": "KSPO DOME (올림픽 체조경기장)",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240502135619c2e1e232-74ba-4ed0-a698-0465072f30e2.png",
+        "date": "2024.06.22 ~  2024.06.23",
         "site": "https://ticket.melon.com/ranking/index.htm"
     },
     {
         "rank": "8",
-        "change": "4 단계 상승",
-        "title": "TUNE UP STAGE［튠업 25기 선정기념 공연 ＃02．blah X 마치（MRCH）］",
-        "Venue": "CJ아지트 광흥창",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240605111846f152b52d-41d0-493d-97a7-16b6b4561188.jpg",
-        "date": "2024.06.20",
+        "change": "2 단계 상승",
+        "title": "워터밤 서울 2024（WATERBOMB SEOUL 2024）",
+        "Venue": "일산 킨텍스(KINTEX) 야외 글로벌 스테이지(KINTEX 제2전시장)",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/02/202402211356400c7f8b20-2a5f-4aa8-9c06-fe72004a0c91.jpg",
+        "date": "2024.07.05 ~  2024.07.07",
         "site": "https://ticket.melon.com/ranking/index.htm"
     },
     {
@@ -82,11 +82,11 @@
     },
     {
         "rank": "10",
-        "change": "2 단계 하락",
-        "title": "2024 SUPER JUNIOR 〈SUPER SHOW SPIN－OFF：Halftime〉 in SEOUL",
-        "Venue": "KSPO DOME (올림픽 체조경기장)",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240502135619c2e1e232-74ba-4ed0-a698-0465072f30e2.png",
-        "date": "2024.06.22 ~  2024.06.23",
+        "change": "2 단계 상승",
+        "title": "TUNE UP STAGE［튠업 25기 선정기념 공연 ＃02．blah X 마치（MRCH）］",
+        "Venue": "CJ아지트 광흥창",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240605111846f152b52d-41d0-493d-97a7-16b6b4561188.jpg",
+        "date": "2024.06.20",
         "site": "https://ticket.melon.com/ranking/index.htm"
     }
 ]

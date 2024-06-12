@@ -19,20 +19,20 @@
     },
     {
         "rank": "3",
-        "change": "1 단계 상승",
-        "title": "뮤지컬 〈그레이트 코멧〉",
-        "Venue": "유니버설아트센터",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/2024012613313215790e76-bf98-4c42-847c-ba77d5f72dac.jpg",
-        "date": "2024.03.26 ~  2024.06.16",
-        "site": "https://ticket.melon.com/ranking/index.htm"
-    },
-    {
-        "rank": "4",
-        "change": "1 단계 상승",
+        "change": "2 단계 상승",
         "title": "뮤지컬 〈벤자민 버튼〉",
         "Venue": "세종문화회관 M씨어터",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/2024040316362798815caf-e155-4bc2-b32f-638ef52b4f28.jpg",
         "date": "2024.05.11 ~  2024.06.30",
+        "site": "https://ticket.melon.com/ranking/index.htm"
+    },
+    {
+        "rank": "4",
+        "change": "-",
+        "title": "뮤지컬 〈그레이트 코멧〉",
+        "Venue": "유니버설아트센터",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/2024012613313215790e76-bf98-4c42-847c-ba77d5f72dac.jpg",
+        "date": "2024.03.26 ~  2024.06.16",
         "site": "https://ticket.melon.com/ranking/index.htm"
     },
     {
@@ -55,7 +55,16 @@
     },
     {
         "rank": "7",
-        "change": "2 단계 상승",
+        "change": "1 단계 상승",
+        "title": "뮤지컬 〈젠틀맨스 가이드：사랑과 살인편〉",
+        "Venue": "광림아트센터 BBCH홀",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/2024052315061282232f40-b3b5-4d13-b07d-d096fe5c1f44.jpg",
+        "date": "2024.07.06 ~  2024.10.20",
+        "site": "https://ticket.melon.com/ranking/index.htm"
+    },
+    {
+        "rank": "8",
+        "change": "1 단계 상승",
         "title": "뮤지컬 〈4월은 너의 거짓말〉",
         "Venue": "예술의전당 CJ 토월극장",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240514113443d2c66bbe-9011-4d5f-b9d7-75abfc68e435.jpg",
@@ -63,8 +72,8 @@
         "site": "https://ticket.melon.com/ranking/index.htm"
     },
     {
-        "rank": "8",
-        "change": "2 단계 하락",
+        "rank": "9",
+        "change": "3 단계 하락",
         "title": "패밀리 아이스쇼 〈피터팬 온 아이스〉 오리지널 내한공연",
         "Venue": "목동아이스링크",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240514170436f7bedbb1-cf1d-4a59-a570-fa45481177c9.jpg",
@@ -72,21 +81,12 @@
         "site": "https://ticket.melon.com/ranking/index.htm"
     },
     {
-        "rank": "9",
-        "change": "1 단계 상승",
+        "rank": "10",
+        "change": "-",
         "title": "2024 뮤지컬 노트르담 드 파리 한국어버전－천안",
         "Venue": "천안예술의전당 대공연장",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/04/20240426132230bc8febe8-71f8-4167-9302-00f13444fb61.jpg",
         "date": "2024.06.28 ~  2024.06.30",
-        "site": "https://ticket.melon.com/ranking/index.htm"
-    },
-    {
-        "rank": "10",
-        "change": "2 단계 하락",
-        "title": "뮤지컬 〈젠틀맨스 가이드：사랑과 살인편〉",
-        "Venue": "광림아트센터 BBCH홀",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/2024052315061282232f40-b3b5-4d13-b07d-d096fe5c1f44.jpg",
-        "date": "2024.07.06 ~  2024.10.20",
         "site": "https://ticket.melon.com/ranking/index.htm"
     }
 ]
