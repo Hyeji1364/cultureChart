@@ -46,20 +46,20 @@
     },
     {
         "rank": "6위",
-        "change": "1단계 상승",
-        "title": "짐 아비뇽 : 21세기 스마일 展",
-        "Venue": "복합문화공간 아트랑 1~3(1~3층)",
-        "date": "2024.06.06 - 2024.09.01",
-        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_10/main_720.jpg",
-        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
-    },
-    {
-        "rank": "7위",
-        "change": "15단계 상승",
+        "change": "16단계 상승",
         "title": "덴마크 가구 디자인의 거장 폴 케홀름  Poul Kjærholm",
         "Venue": "유스퀘이크",
         "date": "2024.05.31 - 2024.07.07",
         "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_1/PK_main_720_889_0517.jpg",
+        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
+    },
+    {
+        "rank": "7위",
+        "change": "-",
+        "title": "짐 아비뇽 : 21세기 스마일 展",
+        "Venue": "복합문화공간 아트랑 1~3(1~3층)",
+        "date": "2024.06.06 - 2024.09.01",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_10/main_720.jpg",
         "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     },
     {
@@ -127,25 +127,16 @@
     },
     {
         "rank": "15위",
-        "change": "24단계 상승",
-        "title": "2024 코리아 캠핑카쇼",
-        "Venue": "BEXCO 제2전시장 4홀",
-        "date": "2024.06.27 - 2024.06.30",
-        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_9/720_889_cam.PNG",
+        "change": "-",
+        "title": "에바 알머슨 특별전 : 에바 알머슨 Andando 전주",
+        "Venue": "한국소리문화의전당 전시장 1F",
+        "date": "2024.06.21 - 2024.10.06",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_4/ticket-thum--720-889.jpg",
         "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     },
     {
         "rank": "16위",
-        "change": "-",
-        "title": "하리보 해피월드 인 제주",
-        "Venue": "하리보 해피월드 인 제주",
-        "date": "2024.07.04 - 2024.12.31",
-        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_4/haribo_main_240523.jpg",
-        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
-    },
-    {
-        "rank": "17위",
-        "change": "9단계 상승",
+        "change": "10단계 상승",
         "title": "[오픈 특가] 베르메르부터 반 고흐까지 5-6월",
         "Venue": "빛의 시어터",
         "date": "2024.05.24 - 2024.06.30",
@@ -153,12 +144,21 @@
         "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     },
     {
+        "rank": "17위",
+        "change": "22단계 상승",
+        "title": "2024 코리아 캠핑카쇼",
+        "Venue": "BEXCO 제2전시장 4홀",
+        "date": "2024.06.27 - 2024.06.30",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_9/720_889_cam.PNG",
+        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
+    },
+    {
         "rank": "18위",
-        "change": "3단계 하락",
-        "title": "에바 알머슨 특별전 : 에바 알머슨 Andando 전주",
-        "Venue": "한국소리문화의전당 전시장 1F",
-        "date": "2024.06.21 - 2024.10.06",
-        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_4/ticket-thum--720-889.jpg",
+        "change": "2단계 하락",
+        "title": "하리보 해피월드 인 제주",
+        "Venue": "하리보 해피월드 인 제주",
+        "date": "2024.07.04 - 2024.12.31",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_4/haribo_main_240523.jpg",
         "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     },
     {
@@ -226,7 +226,16 @@
     },
     {
         "rank": "26위",
-        "change": "5단계 상승",
+        "change": "12단계 상승",
+        "title": "2024 화랑미술제 in 수원",
+        "Venue": "수원컨벤션센터 전시홀 (1층), 컨벤션홀 (3층)",
+        "date": "2024.06.27 - 2024.06.30",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_10/티켓링크포스터_720-889.jpg",
+        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
+    },
+    {
+        "rank": "27위",
+        "change": "4단계 상승",
         "title": "투 비 컨티뉴드 To Be Continued",
         "Venue": "스페이스K 서울",
         "date": "2024.03.14 - 2024.06.16",
@@ -234,8 +243,8 @@
         "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     },
     {
-        "rank": "27위",
-        "change": "15단계 상승",
+        "rank": "28위",
+        "change": "14단계 상승",
         "title": "2024년 제3회 킨텍스 캠핑페스타",
         "Venue": "일산 킨텍스 제2전시장 7홀",
         "date": "2024.07.19 - 2024.07.21",
@@ -243,7 +252,16 @@
         "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     },
     {
-        "rank": "28위",
+        "rank": "29위",
+        "change": "6단계 하락",
+        "title": "쥬세뻬 비탈레 특별전",
+        "Venue": "북서울꿈의숲 상상톡톡미술관",
+        "date": "2024.03.07 - 2024.06.27",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_7/포스터(2).jpg",
+        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
+    },
+    {
+        "rank": "30위",
         "change": "NEW",
         "title": "2024 경기도자비엔날레",
         "Venue": "이천 경기도자미술관,여주 경기생활도자미술관,광주 경기도자박물관",
@@ -252,30 +270,39 @@
         "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     },
     {
-        "rank": "29위",
-        "change": "9단계 상승",
-        "title": "2024 화랑미술제 in 수원",
-        "Venue": "수원컨벤션센터 전시홀 (1층), 컨벤션홀 (3층)",
-        "date": "2024.06.27 - 2024.06.30",
-        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_10/티켓링크포스터_720-889.jpg",
-        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
-    },
-    {
-        "rank": "30위",
-        "change": "6단계 상승",
-        "title": "Khemtit 개인전 < Warm Sunlight >",
-        "Venue": "라이크디즈1601",
-        "date": "2024.05.22 - 2024.06.25",
-        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_5/kh_pst0502.jpg",
-        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
-    },
-    {
         "rank": "31위",
-        "change": "13단계 상승",
+        "change": "16단계 상승",
+        "title": "하오(HA0) 개인전 < The Girl with a Lantern >",
+        "Venue": "라이크디즈위드 김광석거리점",
+        "date": "2024.05.29 - 2024.07.02",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_7/hao_pst0516.jpg",
+        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
+    },
+    {
+        "rank": "32위",
+        "change": "12단계 상승",
         "title": "레이코 이케무라 : 수평선 위의 빛",
         "Venue": "헤레디움",
         "date": "2024.04.03 - 2024.08.04",
         "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_4/leiko_pst0315.jpg",
+        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
+    },
+    {
+        "rank": "33위",
+        "change": "6단계 하락",
+        "title": "매그넘 인 파리 울산",
+        "Venue": "울산 현대예술관 미술관",
+        "date": "2024.05.21 - 2024.09.22",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_10/main_720_240514.jpg",
+        "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
+    },
+    {
+        "rank": "34위",
+        "change": "2단계 상승",
+        "title": "Khemtit 개인전 < Warm Sunlight >",
+        "Venue": "라이크디즈1601",
+        "date": "2024.05.22 - 2024.06.25",
+        "ImageURL": "//image.toast.com/aaaaab/ticketlink/TKL_5/kh_pst0502.jpg",
         "site": "https://www.ticketlink.co.kr/ranking?ranking=genre&categoryId=10&category2Id=16&category3Id=16&period=monthly&currentDate"
     }
 ]
