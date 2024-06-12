@@ -54,6 +54,7 @@ if rank_best_div:
             concert_info['ImageURL'] = concert_link.find('img')['src']
             concert_info['Venue'] = concert_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
             concert_info['rank'] = concert_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
+            concert_info['site'] = "http://ticket.yes24.com" + concert_link['href']
             change_status = concert_link.find('span', class_='rank-best-number-new')
             if change_status:
                 concert_info['change'] = 'NEW'
@@ -105,6 +106,7 @@ for rank_list in rank_lists:
         concert_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
         concert_info['rank'] = rank
         concert_info['change'] = change
+        concert_info['site'] = "http://ticket.yes24.com" + title_link['href'] if title_link else 'No site provided'
         concerts_data.append(concert_info)
 
 # JSON 파일로 저장
