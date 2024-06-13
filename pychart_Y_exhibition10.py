@@ -9,14 +9,10 @@ from bs4 import BeautifulSoup
 import time
 import json
 from datetime import datetime
-import os
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-directory = "yes24exhibiton"
-if not os.path.exists(directory):
-    os.makedirs(directory)
-filename = f"{directory}/pychart_Y_exhibiton10-{current_date}.json"
+filename = f"yes24exhibiton/pychart_Y_exhibiton10{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -49,15 +45,15 @@ events_data = []
 # 1-3위 전시/행사 데이터 추출
 rank_best_div = soup.find('div', class_='rank-best')
 if rank_best_div:
-    event_divs = rank_best_div.find_all('div', recursive=False)
+    event_divs = rank_best_div.find_all('div')
     for event_div in event_divs:
         event_info = {}
         event_link = event_div.find('a', href=True)
         if event_link:
-            event_info['title'] = event_link.get('title', 'No title provided')
-            event_info['ImageURL'] = event_link.find('img')['src']
-            event_info['Venue'] = event_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
-            event_info['rank'] = event_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
+            event_info['title'] = event_link['title'] if 'title' in event_link.attrs else 'No title provided'
+            event_info['ImageURL'] = event_link.find('img')['src'] if event_link.find('img') else 'No image provided'
+            event_info['Venue'] = event_link.find('p', class_='rlb-sub-tit').get_text(strip=True) if event_link.find('p', class_='rlb-sub-tit') else 'No venue provided'
+            event_info['rank'] = event_link.find('p', class_='rank-best-number').find('span').get_text(strip=True) if event_link.find('p', class_='rank-best-number') else 'No rank provided'
             event_info['site'] = "http://ticket.yes24.com" + event_link['href']
             change_status = event_link.find('span', class_='rank-best-number-new')
             if change_status:
