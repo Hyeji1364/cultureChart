@@ -9,14 +9,10 @@ from bs4 import BeautifulSoup
 import time
 import json
 from datetime import datetime
-import os
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-directory = "yes24exhibiton"
-if not os.path.exists(directory):
-    os.makedirs(directory)
-filename = f"{directory}/pychart_Y_exhibiton10{current_date}.json"
+filename = f"yes24exhibiton/pychart_Y_exhibiton10{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
