@@ -9,10 +9,14 @@ from bs4 import BeautifulSoup
 import time
 import json
 from datetime import datetime
+import os
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"yes24exhibiton/pychart_Y_exhibiton10{current_date}.json"
+directory = "yes24exhibiton"
+if not os.path.exists(directory):
+    os.makedirs(directory)
+filename = f"{directory}/pychart_Y_exhibiton10-{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -50,7 +54,7 @@ if rank_best_div:
         event_info = {}
         event_link = event_div.find('a', href=True)
         if event_link:
-            event_info['title'] = event_link['title']
+            event_info['title'] = event_link.get('title', 'No title provided')
             event_info['ImageURL'] = event_link.find('img')['src']
             event_info['Venue'] = event_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
             event_info['rank'] = event_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
