@@ -21,7 +21,7 @@ filename = f"{directory}/pychart_Y_exhibiton10{current_date}.json"
 # 웹드라이버 설치
 options = ChromeOptions()
 options.add_argument("--headless")
-browser = webdriver.Chrome(options=options)
+browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 browser.get("http://ticket.yes24.com/Rank/All")
 time.sleep(5)  # 페이지 로딩 대기
 
