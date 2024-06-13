@@ -37,21 +37,21 @@
     },
     {
         "rank": "5",
-        "change": "2 단계 상승",
-        "title": "TUNE UP STAGE［튠업 25기 선정기념 공연 ＃01．향（HYANG）X 터치드（TOUCHED）］",
-        "Venue": "CJ아지트 광흥창",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/202406051047083ee96a15-9a83-40cb-80d4-027523bd8129.jpg",
-        "site": "https://ticket.melon.com/ranking/index.htm",
-        "date": "2024.06.19"
-    },
-    {
-        "rank": "6",
-        "change": "4 단계 하락",
+        "change": "3 단계 하락",
         "title": "소란한 여름밤",
         "Venue": "스카이아트홀",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/2024061214212766a24aab-4333-4d69-a827-ea5c99dc183d.jpg",
         "site": "https://ticket.melon.com/ranking/index.htm",
         "date": "2024.07.06"
+    },
+    {
+        "rank": "6",
+        "change": "1 단계 상승",
+        "title": "TUNE UP STAGE［튠업 25기 선정기념 공연 ＃01．향（HYANG）X 터치드（TOUCHED）］",
+        "Venue": "CJ아지트 광흥창",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/202406051047083ee96a15-9a83-40cb-80d4-027523bd8129.jpg",
+        "site": "https://ticket.melon.com/ranking/index.htm",
+        "date": "2024.06.19"
     },
     {
         "rank": "7",

@@ -73,20 +73,20 @@
     },
     {
         "rank": "9",
-        "change": "-",
-        "title": "패밀리 아이스쇼 〈피터팬 온 아이스〉 오리지널 내한공연",
-        "Venue": "목동아이스링크",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240514170436f7bedbb1-cf1d-4a59-a570-fa45481177c9.jpg",
-        "date": "2024.08.14 ~  2024.08.18",
-        "site": "https://ticket.melon.com/ranking/index.htm"
-    },
-    {
-        "rank": "10",
-        "change": "4 단계 하락",
+        "change": "3 단계 하락",
         "title": "뮤지컬 〈헤드윅〉",
         "Venue": "샤롯데씨어터",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/01/202401261731424a9c5dc2-6f4e-4986-980f-1027b126696c.jpg",
         "date": "2024.03.22 ~  2024.06.23",
+        "site": "https://ticket.melon.com/ranking/index.htm"
+    },
+    {
+        "rank": "10",
+        "change": "1 단계 하락",
+        "title": "패밀리 아이스쇼 〈피터팬 온 아이스〉 오리지널 내한공연",
+        "Venue": "목동아이스링크",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/20240514170436f7bedbb1-cf1d-4a59-a570-fa45481177c9.jpg",
+        "date": "2024.08.14 ~  2024.08.18",
         "site": "https://ticket.melon.com/ranking/index.htm"
     }
 ]
