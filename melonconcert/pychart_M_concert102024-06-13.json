@@ -73,20 +73,20 @@
     },
     {
         "rank": "9",
-        "change": "2 단계 상승",
+        "change": "5 단계 상승",
+        "title": "청춘썸머나잇2024",
+        "Venue": "일산 킨텍스(KINTEX)",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/05/2024052817010894c41bd8-0b5f-4618-baa5-1371492e0859.jpg",
+        "site": "https://ticket.melon.com/ranking/index.htm",
+        "date": "2024.07.06 ~  2024.07.07"
+    },
+    {
+        "rank": "10",
+        "change": "1 단계 상승",
         "title": "DMZ 피스트레인 뮤직 페스티벌 2024",
         "Venue": "강원도 철원군 고석정 일대",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/02/202402220946568b143b66-2f15-4c08-adf4-75be63587345.jpg",
         "site": "https://ticket.melon.com/ranking/index.htm",
         "date": "2024.06.15 ~  2024.06.16"
-    },
-    {
-        "rank": "10",
-        "change": "1 단계 하락",
-        "title": "TUNE UP STAGE［튠업 25기 선정기념 공연 ＃03．김뜻돌 X 다섯］",
-        "Venue": "CJ아지트 광흥창",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240605112011be668f29-09ae-41b4-b7e3-5e4ad074711c.jpg",
-        "site": "https://ticket.melon.com/ranking/index.htm",
-        "date": "2024.06.21"
     }
 ]
