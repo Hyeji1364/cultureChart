@@ -52,10 +52,11 @@ for track in tracks:
     change = track.select_one("td.fst .change").text.strip()
     # change 텍스트에서 불필요한 공백 제거
     change = ' '.join(change.split())
-    title = track.select_one("div.show_infor p.infor_text a").text.strip()
+    title_element = track.select_one("div.show_infor p.infor_text a")
+    title = title_element.text.strip()
     place = track.select_one("td:nth-child(4)").text.strip()
     image_url = track.select_one("div.thumb_90x125 img").get('src')
-    site_url = "https://ticket.melon.com/ranking/index.htm"
+    site_url = "https://ticket.melon.com" + title_element.get('href')
 
     # 여러 날짜를 하나의 문자열로 결합
     date_elements = track.select("ul.show_date li")
