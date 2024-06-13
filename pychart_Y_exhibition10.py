@@ -9,10 +9,14 @@ from bs4 import BeautifulSoup
 import time
 import json
 from datetime import datetime
+import os
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"yes24exhibiton/pychart_Y_exhibiton10{current_date}.json"
+directory = "yes24exhibiton"
+if not os.path.exists(directory):
+    os.makedirs(directory)
+filename = f"{directory}/pychart_Y_exhibiton10{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -22,10 +26,10 @@ browser.get("http://ticket.yes24.com/Rank/All")
 time.sleep(5)  # 페이지 로딩 대기
 
 # 전시/행사 카테고리로 이동
-exhibiton_link = WebDriverWait(browser, 10).until(
+event_link = WebDriverWait(browser, 10).until(
     EC.presence_of_element_located((By.XPATH, "//a[contains(@href, '/New/Rank/Ranking.aspx?genre=15460')]"))
 )
-exhibiton_link.click()
+event_link.click()
 time.sleep(2)  # 전시/행사 페이지 로딩 대기
 
 # 월간 카테고리 선택
@@ -40,41 +44,41 @@ page_source = browser.page_source
 soup = BeautifulSoup(page_source, 'html.parser')
 
 # 정보 추출
-exhibitons_data = []
+events_data = []
 
 # 1-3위 전시/행사 데이터 추출
 rank_best_div = soup.find('div', class_='rank-best')
 if rank_best_div:
-    exhibiton_divs = rank_best_div.find_all('div', recursive=False)
-    for exhibiton_div in exhibiton_divs:
-        exhibiton_info = {}
-        exhibiton_link = exhibiton_div.find('a', href=True)
-        if exhibiton_link:
-            exhibiton_info['title'] = exhibiton_link['title']
-            exhibiton_info['ImageURL'] = exhibiton_link.find('img')['src']
-            exhibiton_info['Venue'] = exhibiton_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
-            exhibiton_info['rank'] = exhibiton_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
-            exhibiton_info['site'] = "http://ticket.yes24.com" + exhibiton_link['href']
-            change_status = exhibiton_link.find('span', class_='rank-best-number-new')
+    event_divs = rank_best_div.find_all('div', recursive=False)
+    for event_div in event_divs:
+        event_info = {}
+        event_link = event_div.find('a', href=True)
+        if event_link:
+            event_info['title'] = event_link['title']
+            event_info['ImageURL'] = event_link.find('img')['src']
+            event_info['Venue'] = event_link.find('p', class_='rlb-sub-tit').get_text(strip=True)
+            event_info['rank'] = event_link.find('p', class_='rank-best-number').find('span').get_text(strip=True)
+            event_info['site'] = "http://ticket.yes24.com" + event_link['href']
+            change_status = event_link.find('span', class_='rank-best-number-new')
             if change_status:
-                exhibiton_info['change'] = 'NEW'
+                event_info['change'] = 'NEW'
             else:
-                change = exhibiton_link.find('span', {'class': ['rank-best-number-up', 'rank-best-number-down']})
+                change = event_link.find('span', {'class': ['rank-best-number-up', 'rank-best-number-down']})
                 if change:
                     if 'rank-best-number-up' in change['class']:
-                        exhibiton_info['change'] = f"{change.get_text(strip=True)}단계 상승"
+                        event_info['change'] = f"{change.get_text(strip=True)}단계 상승"
                     elif 'rank-best-number-down' in change['class']:
-                        exhibiton_info['change'] = f"{change.get_text(strip=True)}단계 하락"
+                        event_info['change'] = f"{change.get_text(strip=True)}단계 하락"
                 else:
-                    exhibiton_info['change'] = '-'
-            exhibitons_data.append(exhibiton_info)
+                    event_info['change'] = '-'
+            events_data.append(event_info)
 
 # 전체 전시/행사 순위 정보 추출
 rank_lists = soup.find_all('div', class_='rank-list')  # 모든 rank-list 컨테이너 선택
 for rank_list in rank_lists:
     items = rank_list.find_all('div', recursive=False)  # 모든 항목 추출
     for item in items:
-        exhibiton_info = {}
+        event_info = {}
         title_link = item.find('p', class_='rank-list-tit').find('a')
         image = item.find('img', class_='rank-list-img')
         date_location = item.find_all('p')[-1]
@@ -101,17 +105,17 @@ for rank_list in rank_lists:
             rank = 'No rank provided'
             change = '-'
 
-        exhibiton_info['title'] = title_link.text.strip() if title_link else 'No title provided'
-        exhibiton_info['ImageURL'] = image['src'] if image else 'No image provided'
-        exhibiton_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
-        exhibiton_info['rank'] = rank
-        exhibiton_info['change'] = change
-        exhibiton_info['site'] = "http://ticket.yes24.com" + title_link['href'] if title_link else 'No site provided'
-        exhibitons_data.append(exhibiton_info)
+        event_info['title'] = title_link.text.strip() if title_link else 'No title provided'
+        event_info['ImageURL'] = image['src'] if image else 'No image provided'
+        event_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
+        event_info['rank'] = rank
+        event_info['change'] = change
+        event_info['site'] = "http://ticket.yes24.com" + title_link['href'] if title_link else 'No site provided'
+        events_data.append(event_info)
 
 # JSON 파일로 저장
 with open(filename, 'w', encoding='utf-8') as file:
-    json.dump(exhibitons_data, file, ensure_ascii=False, indent=4)
-    
+    json.dump(events_data, file, ensure_ascii=False, indent=4)
+
 # 브라우저 닫기
 browser.quit()
