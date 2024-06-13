@@ -55,21 +55,21 @@
     },
     {
         "rank": "7",
-        "change": "4 단계 하락",
-        "title": "박장현 팬미팅 〈靑春의 6월〉",
-        "Venue": "성암아트홀",
-        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240611091536ef00702f-6e9f-4356-bf7f-2403f547164c.jpg",
-        "date": "2024.06.29",
-        "site": "https://ticket.melon.com/performance/index.htm?prodId=209994"
-    },
-    {
-        "rank": "8",
-        "change": "2 단계 상승",
+        "change": "3 단계 상승",
         "title": "워터밤 서울 2024（WATERBOMB SEOUL 2024）",
         "Venue": "일산 킨텍스(KINTEX) 야외 글로벌 스테이지(KINTEX 제2전시장)",
         "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/02/202402211356400c7f8b20-2a5f-4aa8-9c06-fe72004a0c91.jpg",
         "date": "2024.07.05 ~  2024.07.07",
         "site": "https://ticket.melon.com/performance/index.htm?prodId=209531"
+    },
+    {
+        "rank": "8",
+        "change": "5 단계 하락",
+        "title": "박장현 팬미팅 〈靑春의 6월〉",
+        "Venue": "성암아트홀",
+        "ImageURL": "https://cdnticket.melon.co.kr/resource/image/upload/product/2024/06/20240611091536ef00702f-6e9f-4356-bf7f-2403f547164c.jpg",
+        "date": "2024.06.29",
+        "site": "https://ticket.melon.com/performance/index.htm?prodId=209994"
     },
     {
         "rank": "9",
