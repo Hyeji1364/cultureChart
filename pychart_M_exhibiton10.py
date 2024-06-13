@@ -12,7 +12,7 @@ import json
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"melonmusical/pychart_M_musical10{current_date}.json"
+filename = f"melonexhibiton/pychart_M_exhibiton10{current_date}.json"
 
 # 웹 드라이버 설정
 options = ChromeOptions()
@@ -27,49 +27,57 @@ url = "https://ticket.melon.com/ranking/index.htm"
 browser.get(url)
 time.sleep(5)  # 페이지 로딩 대기
 
-# "뮤지컬/연극" 버튼 클릭
+# "전시/클래식/기타" 버튼 클릭
 try:
     concert_button = WebDriverWait(browser, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[@value='NEW_GENRE_ART']"))
+        EC.element_to_be_clickable((By.XPATH, "//button[@value='NEW_GENRE_EXH']"))
     )
     concert_button.click()
-    print("Clicked '뮤지컬/연극' button.")
-    time.sleep(3)  # 페이지가 완전히 로드될 때까지 대기
+    print("Clicked '전시/클래식/기타' button.")
+    time.sleep(5)  # 페이지가 완전히 로드될 때까지 대기
 except Exception as e:
-    print("Error clicking '뮤지컬/연극' button:", e)
+    print("Error clicking '전시/클래식/기타' button:", e)
+    browser.quit()
+    raise
 
 # 페이지 소스 가져오기
-page_source = browser.page_source
+try:
+    page_source = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, ".tbl.tbl_style02 tbody"))
+    ).get_attribute('innerHTML')
+except Exception as e:
+    print("Error loading the table:", e)
+    browser.quit()
+    raise
 
 # BeautifulSoup을 사용하여 HTML 파싱
 soup = BeautifulSoup(page_source, 'html.parser')
 
 # 데이터 추출
 music_data = []
-tracks = soup.select(".tbl.tbl_style02 tbody tr")
+tracks = soup.select("tr")
 for track in tracks:
-    rank = track.select_one("td.fst .ranking").text.strip()
+    rank = track.select_one("td.fst .ranking").text.strip() if track.select_one("td.fst .ranking") else None
     change = track.select_one("td.fst .change").text.strip()
     # change 텍스트에서 불필요한 공백 제거
     change = ' '.join(change.split())
-    title = track.select_one("div.show_infor p.infor_text a").text.strip()
-    place = track.select_one("td:nth-child(4)").text.strip()
-    image_url = track.select_one("div.thumb_90x125 img").get('src')
+    title = track.select_one("div.show_infor p.infor_text a").text.strip() if track.select_one("div.show_infor p.infor_text a") else None
+    place = track.select_one("td:nth-child(4)").text.strip() if track.select_one("td:nth-child(4)") else None
+    image_url = track.select_one("div.thumb_90x125 img").get('src') if track.select_one("div.thumb_90x125 img") else None
     site_url = "https://ticket.melon.com/ranking/index.htm"
-
-    # 날짜 정보 추출
     date_elements = track.select("ul.show_date li")
     date = " ".join([element.text.strip() for element in date_elements])
 
-    music_data.append({
-        "rank": rank,
-        "change": change,
-        "title": title,
-        "Venue": place,
-        "ImageURL": image_url,
-        "date": date,
-        "site": site_url
-    })
+    if rank and change and title and place and image_url and site_url and date:
+        music_data.append({
+            "rank": rank,
+            "change": change,
+            "title": title,
+            "Venue": place,
+            "ImageURL": image_url,
+            "site": site_url,
+            "date":date
+        })
 
 # 데이터를 JSON 파일로 저장
 with open(filename, 'w', encoding='utf-8') as f:
