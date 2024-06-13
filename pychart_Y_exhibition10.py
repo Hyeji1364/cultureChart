@@ -58,7 +58,7 @@ if rank_best_div:
             event_info['ImageURL'] = event_link.find('img')['src'] if event_link.find('img') else 'No image provided'
             event_info['Venue'] = event_link.find('p', class_='rlb-sub-tit').get_text(strip=True) if event_link.find('p', class_='rlb-sub-tit') else 'No venue provided'
             event_info['rank'] = event_link.find('p', class_='rank-best-number').find('span').get_text(strip=True) if event_link.find('p', class_='rank-best-number') else 'No rank provided'
-            event_info['site'] = "http://ticket.yes24.com" + event_link['href']
+            event_info['site'] = "http://ticket.yes24.com/Rank/All"  # 공통 URL로 설정
             change_status = event_link.find('span', class_='rank-best-number-new')
             if change_status:
                 event_info['change'] = 'NEW'
@@ -110,7 +110,7 @@ for rank_list in rank_lists:
         event_info['Venue'] = date_location.get_text(strip=True) if date_location else 'No date and location provided'
         event_info['rank'] = rank
         event_info['change'] = change
-        event_info['site'] = "http://ticket.yes24.com" + title_link['href'] if title_link else 'No site provided'
+        event_info['site'] = "http://ticket.yes24.com/Rank/All"  # 공통 URL로 설정
         events_data.append(event_info)
 
 # JSON 파일로 저장
