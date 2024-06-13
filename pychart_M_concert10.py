@@ -34,43 +34,50 @@ try:
     )
     concert_button.click()
     print("Clicked '콘서트/페스티벌' button.")
-    time.sleep(3)  # 페이지가 완전히 로드될 때까지 대기
+    time.sleep(5)  # 페이지가 완전히 로드될 때까지 대기
 except Exception as e:
     print("Error clicking '콘서트/페스티벌' button:", e)
+    browser.quit()
+    raise
 
 # 페이지 소스 가져오기
-page_source = browser.page_source
+try:
+    page_source = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, ".tbl.tbl_style02 tbody"))
+    ).get_attribute('innerHTML')
+except Exception as e:
+    print("Error loading the table:", e)
+    browser.quit()
+    raise
 
 # BeautifulSoup을 사용하여 HTML 파싱
 soup = BeautifulSoup(page_source, 'html.parser')
 
 # 데이터 추출
 music_data = []
-tracks = soup.select(".tbl.tbl_style02 tbody tr")
+tracks = soup.select("tr")
 for track in tracks:
-    rank = track.select_one("td.fst .ranking").text.strip()
+    rank = track.select_one("td.fst .ranking").text.strip() if track.select_one("td.fst .ranking") else None
     change = track.select_one("td.fst .change").text.strip()
     # change 텍스트에서 불필요한 공백 제거
     change = ' '.join(change.split())
-    title_element = track.select_one("div.show_infor p.infor_text a")
-    title = title_element.text.strip()
-    place = track.select_one("td:nth-child(4)").text.strip()
-    image_url = track.select_one("div.thumb_90x125 img").get('src')
-    site_url = "https://ticket.melon.com" + title_element.get('href')
-
-    # 여러 날짜를 하나의 문자열로 결합
+    title = track.select_one("div.show_infor p.infor_text a").text.strip() if track.select_one("div.show_infor p.infor_text a") else None
+    place = track.select_one("td:nth-child(4)").text.strip() if track.select_one("td:nth-child(4)") else None
+    image_url = track.select_one("div.thumb_90x125 img").get('src') if track.select_one("div.thumb_90x125 img") else None
+    site_url = "https://ticket.melon.com/ranking/index.htm"
     date_elements = track.select("ul.show_date li")
     date = " ".join([element.text.strip() for element in date_elements])
 
-    music_data.append({
-        "rank": rank,
-        "change": change,
-        "title": title,
-        "Venue": place,
-        "ImageURL": image_url,
-        "date": date,
-        "site": site_url
-    })
+    if rank and change and title and place and image_url and site_url and date:
+        music_data.append({
+            "rank": rank,
+            "change": change,
+            "title": title,
+            "Venue": place,
+            "ImageURL": image_url,
+            "site": site_url,
+            "date":date
+        })
 
 # 데이터를 JSON 파일로 저장
 with open(filename, 'w', encoding='utf-8') as f:
